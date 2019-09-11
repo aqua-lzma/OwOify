@@ -1,5 +1,5 @@
 (function () {
-  // OwO whats this weplacement scwipt vewsion 4.5.2.4
+  // OwO whats this weplacement scwipt vewsion 4.5.2.4.?
   // Now with extwa extwa kawaiiness ~ hehe x
   // Non fwicked
   // Wowds ending with y awe even mowe funny wunny now
@@ -20,7 +20,9 @@
     shit: 'shoot',
     friend: 'fwend',
     stop: 'stawp',
-    god: 'gosh'
+    god: 'gosh',
+    dick: 'peepee',
+    penis: 'peepee'
   }
   let suffixes = [
     '(ﾉ´ з `)ノ',
