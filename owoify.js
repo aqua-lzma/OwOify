@@ -13,7 +13,8 @@
     fuk: 'fwick',
     shit: 'shoot',
     friend: 'fwend',
-    stop: 'stawp'
+    stop: 'stawp',
+    god: 'gosh'
   }
   let suffixes = [
     '(ﾉ´ з `)ノ',
