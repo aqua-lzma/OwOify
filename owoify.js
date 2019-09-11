@@ -8,6 +8,7 @@
     mr: 'mistuh',
     dog: 'doggo',
     cat: 'kitteh',
+    hello: 'henwo',
     hell: 'heck',
     fuck: 'fwick',
     fuk: 'fwick',
