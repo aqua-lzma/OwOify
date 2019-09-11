@@ -1,8 +1,5 @@
 (function () {
-  // OwO whats this weplacement scwipt vewsion 4.5.2.4.?
-  // Now with extwa extwa kawaiiness ~ hehe x
-  // Non fwicked
-  // Wowds ending with y awe even mowe funny wunny now
+  // OwO whats this vewsion 6.9.?c ~ :3
   // I h-hope you l-like it...
 
   let stutterChance = 0.1
@@ -37,6 +34,7 @@
     '(・ω・)',
     '✾(〜 ☌ω☌)〜✾',
     '(ᗒᗨᗕ)',
+    '(・`ω´・)',
     ':3',
     '>:3',
     'hehe',
@@ -73,6 +71,8 @@
     text = replaceAll(text, words)
     // OwO
     text = text.replace(/[rl]/gi, match => match.charCodeAt(0) < 97 ? 'W' : 'w')
+    // Nya >;3
+    text = text.replace(/n[aeiou]/gi, match => `${match[0]}y${match[1]}`)
     // Words that end in y like cummy wummy
     text = text.replace(/\b[A-V,X-Z,a-v,x-z]\w{3,}y\b/gi, match =>
       `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
