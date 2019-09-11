@@ -5,7 +5,7 @@
   // Wowds ending with y awe even mowe funny wunny now
   // I h-hope you l-like it...
 
-  let stutterChance = 0.2
+  let stutterChance = 0.1
   let prefixChance = 0.05
   let suffixChance = 0.15
   let words = {
@@ -72,10 +72,9 @@
     // OwO
     text = text.replace(/[rl]/gi, match => match.charCodeAt(0) < 97 ? 'W' : 'w')
     // Words that end in y like cummy wummy
-    text = text.replace(/\b\w{4,}y\b/gi, match => {
-      if (match[0] === 'W' || match[0] === 'w') return match
-      return `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
-    })
+    text = text.replace(/\b[A-V,X-Z,a-v,x-z]{4,}y\b/gi, match =>
+      `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
+    )
     // S-stutter
     text = text.split(' ').map(word => {
       if (word.length === 0 || word[0].match(/[a-zA-Z]/) == null) return word
