@@ -1,5 +1,5 @@
 (function () {
-  // OwO whats this weplacement scwipt vewsion 4.5
+  // OwO whats this weplacement scwipt vewsion 4.5.2
   // Now with extwa extwa kawaiiness ~ hehe x
   // Non fwicked
   // Wowds ending with y awe even mowe funny wunny now
@@ -18,7 +18,6 @@
     fuk: 'fwick',
     shit: 'shoot',
     friend: 'fwend',
-
     stop: 'stawp',
     god: 'gosh'
   }
@@ -47,9 +46,12 @@
   let prefixes = [
     'OwO',
     'OwO whats this?',
+    '*unbuttons shirt*',
     '*nuzzles*',
     '*waises paw*',
     '*notices bulge*',
+    '*blushes*',
+    '*giggles*',
     'hehe'
   ]
 
