@@ -70,9 +70,13 @@
   function owoify (text) {
     text = replaceAll(text, words)
     // OwO
-    text = text.replace(/[rl]/gi, match => match.charCodeAt(0) < 97 ? 'W' : 'w')
+    text = text.replace(/[rl]/gi, match =>
+      match.charCodeAt(0) < 97 ? 'W' : 'w'
+    )
     // Nya >;3
-    text = text.replace(/n[aeiou]/gi, match => `${match[0]}y${match[1]}`)
+    text = text.replace(/n[aeiou]/gi, match =>
+      `${match[0]}${match.charCodeAt(1) < 97 ? 'Y' : 'y'}${match[1]}`
+    )
     // Words that end in y like cummy wummy
     text = text.replace(/\b[A-V,X-Z,a-v,x-z]\w{3,}y\b/gi, match =>
       `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
@@ -97,6 +101,7 @@
   }
 
   function recurse (node) {
+    if (['STYLE', 'SCRIPT', 'NOSCRIPT', 'IFRAME', 'OBJECT'].includes(node.tagName)) return
     for (let child of node.childNodes) {
       recurse(child)
     }
@@ -104,6 +109,7 @@
       node.nodeValue = owoify(node.nodeValue)
     }
   }
+
   document.body.addEventListener('DOMNodeInserted', event => {
     recurse(event.target)
   })
