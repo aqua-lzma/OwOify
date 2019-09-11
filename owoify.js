@@ -1,7 +1,8 @@
 (function () {
-  // OwO whats this replacement script version 4.0
-  // Now with extra extra kawaiiness ~ hehe x
-  // Non fricked
+  // OwO whats this weplacement scwipt vewsion 4.0
+  // Now with extwa extwa kawaiiness ~ hehe x
+  // Non fwicked
+  // Wowds ending with y awe even mowe funny wunny now
   let words = {
     love: 'wuv',
     mr: 'mistuh',
@@ -49,6 +50,10 @@
   function owoify (text) {
     text = replaceAll(text, words)
     text = text.replace(/[rl]/gi, match => match.charCodeAt(0) < 97 ? 'W' : 'w')
+    text = text.replace(/\b\w+y\b/gi, match => {
+      if (match[0] === 'W' || match[0] === 'w') return match
+      return `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
+    })
     if (Math.random() < 0.1) {
       text = `${text} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`
     }
