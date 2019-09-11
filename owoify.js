@@ -76,4 +76,5 @@
   document.body.addEventListener('DOMNodeInserted', event => {
     recurse(event.target)
   })
+  recurse(document.body)
 })()
