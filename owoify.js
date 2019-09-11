@@ -1,10 +1,11 @@
 (function () {
-  // OwO whats this weplacement scwipt vewsion 4.5.2
+  // OwO whats this weplacement scwipt vewsion 4.5.2.4
   // Now with extwa extwa kawaiiness ~ hehe x
   // Non fwicked
   // Wowds ending with y awe even mowe funny wunny now
   // I h-hope you l-like it...
-  let stutterChance = 0.05
+
+  let stutterChance = 0.2
   let prefixChance = 0.05
   let suffixChance = 0.15
   let words = {
@@ -70,8 +71,8 @@
     text = replaceAll(text, words)
     // OwO
     text = text.replace(/[rl]/gi, match => match.charCodeAt(0) < 97 ? 'W' : 'w')
-    // Replace words
-    text = text.replace(/\b\w+y\b/gi, match => {
+    // Words that end in y like cummy wummy
+    text = text.replace(/\b\w{4,}y\b/gi, match => {
       if (match[0] === 'W' || match[0] === 'w') return match
       return `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
     })
