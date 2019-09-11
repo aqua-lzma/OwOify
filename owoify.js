@@ -1,8 +1,12 @@
 (function () {
-  // OwO whats this weplacement scwipt vewsion 4.0
+  // OwO whats this weplacement scwipt vewsion 4.5
   // Now with extwa extwa kawaiiness ~ hehe x
   // Non fwicked
   // Wowds ending with y awe even mowe funny wunny now
+  // I h-hope you l-like it...
+  let stutterChance = 0.05
+  let prefixChance = 0.05
+  let suffixChance = 0.15
   let words = {
     love: 'wuv',
     mr: 'mistuh',
@@ -14,6 +18,7 @@
     fuk: 'fwick',
     shit: 'shoot',
     friend: 'fwend',
+
     stop: 'stawp',
     god: 'gosh'
   }
@@ -21,6 +26,15 @@
     '(ﾉ´ з `)ノ',
     '( ´ ▽ ` ).｡ｏ♡',
     '(´,,•ω•,,)♡',
+    '(*≧▽≦)',
+    'ɾ⚈▿⚈ɹ',
+    '( ﾟ∀ ﾟ)',
+    '( ・ ̫・)',
+    '( •́ .̫ •̀ )',
+    '(▰˘v˘▰)',
+    '(・ω・)',
+    '✾(〜 ☌ω☌)〜✾',
+    '(ᗒᗨᗕ)',
     ':3',
     '>:3',
     'hehe',
@@ -32,6 +46,7 @@
   ]
   let prefixes = [
     'OwO',
+    'OwO whats this?',
     '*nuzzles*',
     '*waises paw*',
     '*notices bulge*',
@@ -51,15 +66,27 @@
 
   function owoify (text) {
     text = replaceAll(text, words)
+    // OwO
     text = text.replace(/[rl]/gi, match => match.charCodeAt(0) < 97 ? 'W' : 'w')
+    // Replace words
     text = text.replace(/\b\w+y\b/gi, match => {
       if (match[0] === 'W' || match[0] === 'w') return match
       return `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
     })
-    if (Math.random() < 0.1) {
+    // S-stutter
+    text = text.split(' ').map(word => {
+      if (word.length === 0 || word[0].match(/[a-zA-Z]/) == null) return word
+      while (Math.random() < stutterChance) {
+        word = `${word[0]}-${word}`
+      }
+      return word
+    }).join(' ')
+    // Prefixes
+    if (Math.random() < prefixChance) {
       text = `${text} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`
     }
-    if (Math.random() < 0.05) {
+    // Suffixes
+    if (Math.random() < suffixChance) {
       text = `${prefixes[Math.floor(Math.random() * prefixes.length)]} ${text}`
     }
     return text
@@ -69,7 +96,7 @@
     for (let child of node.childNodes) {
       recurse(child)
     }
-    if (node.nodeType === 3) {
+    if (node.nodeType === 3 && node.nodeValue != null) {
       node.nodeValue = owoify(node.nodeValue)
     }
   }
