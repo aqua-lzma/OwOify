@@ -24,7 +24,7 @@ This way you can easily edit the chances and not clutter up your console.
 Why on earth would you want to do that?!
 
 In the console, paste `observer.disconnect()`.
-Or simply refresh the page (on the desktop client this can be done with `Ctrl` + `R`.
+Or simply refresh the page (on the desktop client this can be done with `Ctrl` + `R`).
 
 Or if you're a bit dense and on the desktop client you can restart the entire thing.
 
