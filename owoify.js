@@ -1,5 +1,5 @@
 (function () {
-  // OwO whats this vewsion 6.9.?c ~ :3
+  // OwO whats this vewsion 6.9.?c ~ :3c
   // I h-hope you l-like it...
 
   let stutterChance = 0.1
@@ -44,6 +44,7 @@
     'UwU',
     '*gwomps*'
   ]
+  suffixes.sort((a, b) => a.length - b.length)
   let prefixes = [
     'OwO',
     'OwO whats this?',
@@ -55,6 +56,7 @@
     '*giggles*',
     'hehe'
   ]
+  prefixes.sort((a, b) => a.length - b.length)
 
   function replaceAll (text, map) {
     let source = Object.keys(map).map(i => `\\b${i}`)
@@ -65,6 +67,20 @@
       if ((match.match(/[A-Z]/g) || []).length > match.length / 2) out = out.toUpperCase()
       return out
     })
+  }
+
+  function weightedRandom (list) {
+    // Returns a random choice from the list based on the length of string in the list
+    // Shorter strings are proportionally more likely to be picked
+    // ** List should already be sorted shortest to longest **
+    let max = list[list.length - 1].length + 1
+    let acc = 0
+    let weights = list.map(i => acc += max - i.length)
+    let random = Math.floor(Math.random() * acc)
+    for (var [index, weight] of weights.entries()) {
+      if (random < weight) break
+    }
+    return list[index]
   }
 
   function owoify (text) {
@@ -78,12 +94,12 @@
       `${match[0]}${match.charCodeAt(1) < 97 ? 'Y' : 'y'}${match[1]}`
     )
     // Words that end in y like cummy wummy
-    text = text.replace(/\b[A-V,X-Z,a-v,x-z]\w{3,}y\b/gi, match =>
-      `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.slice(1)}`
+    text = text.replace(/\b[A-V,X-Z,a-v,x-z](?:[aeiouy]\w{2,}|\w+[aeiouy]\w+|\w{2,}[aeiouy])y\b/gi, match =>
+      `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.match(/\w[aeiouy].*/i)[0].slice(1)}`
     )
     // S-stutter
     text = text.split(' ').map(word => {
-      if (word.length === 0 || word[0].match(/[a-zA-Z]/) == null) return word
+      if (word.length === 0 || word[0].match(/[a-z]/i) == null) return word
       while (Math.random() < stutterChance) {
         word = `${word[0]}-${word}`
       }
@@ -91,27 +107,41 @@
     }).join(' ')
     // Prefixes
     if (Math.random() < prefixChance) {
-      text = `${text} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`
+      text = `${weightedRandom(prefixes)} ${text}`
     }
     // Suffixes
     if (Math.random() < suffixChance) {
-      text = `${prefixes[Math.floor(Math.random() * prefixes.length)]} ${text}`
+      text = `${text} ${weightedRandom(suffixes)}`
     }
     return text
   }
 
-  function recurse (node) {
-    if (['STYLE', 'SCRIPT', 'NOSCRIPT', 'IFRAME', 'OBJECT'].includes(node.tagName)) return
-    for (let child of node.childNodes) {
-      recurse(child)
+  function getTextNodes (node, set) {
+    if (!['STYLE', 'SCRIPT', 'NOSCRIPT', 'IFRAME', 'OBJECT'].includes(node.tagName)) {
+      for (let child of node.childNodes) {
+        set = getTextNodes(child, set)
+      }
+      if (node.nodeType === 3 && (node.nodeValue != null || node.nodeValue !== '')) {
+        set.add(node)
+      }
     }
-    if (node.nodeType === 3 && node.nodeValue != null) {
-      node.nodeValue = owoify(node.nodeValue)
-    }
+    return set
   }
 
-  document.body.addEventListener('DOMNodeInserted', event => {
-    recurse(event.target)
+  observer = new MutationObserver(mutations => {
+    let targets = new Set()
+    for (mutation of mutations) {
+      for (node of mutation.addedNodes) {
+        targets = getTextNodes(node, targets)
+      }
+    }
+    for (let target of targets) {
+      target.nodeValue = owoify(target.nodeValue)
+    }
   })
-  recurse(document.body)
+
+  for (let node of getTextNodes(document.body, new Set())) {
+    node.nodeValue = owoify(node.nodeValue)
+  }
+  observer.observe(document.body, { childList: true, subtree: true })
 })()
