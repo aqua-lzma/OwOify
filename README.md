@@ -11,7 +11,7 @@ Examples of changes:
 
 `This is why god has abandoned us` -> `*blushes* T-This is why gosh has abandonyed  u-us (´,,•ω•,,)♡`
 
-`God fucking damn it stop owo'ifying everything. It's really annoying!` -> `hehe gosh fwicking darn it stop owo'ifying evewything. It's weawwy weawwy annoying! >3<`
+`God fucking damn it stop owo'ifying everything. It's really annoying!` -> `hehe g-gosh fwicking darn it s-stop owo'ifying evewything. It's weawwy w-weawwy annoying! >3<`
 
 ## Discord
 
