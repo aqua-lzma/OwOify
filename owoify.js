@@ -94,7 +94,7 @@
       `${match[0]}${match.charCodeAt(1) < 97 ? 'Y' : 'y'}${match[1]}`
     )
     // Words that end in y like cummy wummy
-    text = text.replace(/\b[A-V,X-Z,a-v,x-z](?:[aeiouy]\w{2,}|\w+[aeiouy]\w+|\w{2,}[aeiouy])y\b/gi, match =>
+    text = text.replace(/\b[a-vx-z](?:[aeiouy]\w{2,}|\w+[aeiouy]\w+|\w{2,}[aeiouy])y\b/gi, match =>
       `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.match(/\w[aeiouy].*/i)[0].slice(1)}`
     )
     // S-stutter
