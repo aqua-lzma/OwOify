@@ -7,7 +7,7 @@ OwO'ify browser extension and Discord script
 
 #### Usage
 
-To run this on the regular discord client its as simple as pressing `Ctrl` + `Shift` + `I` and pasting it into the console.
+To run this on the regular Discord client its as simple as pressing `Ctrl` + `Shift` + `I` and pasting it into the console.
 
 *Sure there's a big "HOLD IT!" warning, but you're not stupid right? You can read JavaScript, right? You're not a baka... R-right?*
 
