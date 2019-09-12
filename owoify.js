@@ -19,7 +19,8 @@
     stop: 'stawp',
     god: 'gosh',
     dick: 'peepee',
-    penis: 'peepee'
+    penis: 'peepee',
+    damn: 'darn'
   }
   let suffixes = [
     '(ﾉ´ з `)ノ',
