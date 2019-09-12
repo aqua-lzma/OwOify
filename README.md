@@ -27,6 +27,7 @@ In the console, paste `observer.disconnect()`.
 Or simply refresh the page (on the desktop client this can be done with `Ctrl` + `R`).
 
 Or if you're a bit dense and on the desktop client you can restart the entire thing.
+Better yet, restart your whole PC.
 
 ### BetterDiscord
 
