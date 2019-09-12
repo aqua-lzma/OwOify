@@ -1,6 +1,16 @@
 # OwOify
 OwO'ify browser extension and Discord script
 
+OwO'ify webpages to make them much more fun to read!
+
+Examples of changes:
+
+`Hello friends, how is everyone?` -> `*waises paw* h-hewwo friends h-how is evewyone? (*≧▽≦)`
+
+`Hey I am going to the supermarket, do you want anything?` -> `*giggles* H-hey I am g-going to the supewmawket, do you want a-anything? (・ω・)`
+
+`This is why god has abandoned us` -> `*blushes* T-This is why gosh has abandonyed  u-us (´,,•ω•,,)♡`
+
 ## Discord
 
 ### Desktop Discord client
