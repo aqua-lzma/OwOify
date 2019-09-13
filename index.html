@@ -1,23 +1,49 @@
----
-title: OwO'ify
----
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <meta name="description" content="OwO whats this? OwO Translator, browser and discord extension? Now everything is cyute!">
+    <title>OwO'ifier</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .options {
+        display: inline-table;
+        width: calc(100% / 3);
+      }
+    </style>
     <script src="owoify.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
-    <h1>OwO what's this?</h1>
-    <textarea id="input" style="width: calc(50% - 3px)"></textarea>
-    <textarea id="output" readonly style="width: calc(50% - 3px)"></textarea>
-    <script>
-      document.querySelector('#input').addEventListener('keyup', function () {
-        document.querySelector('#output').value = owoify(this.value)
-      })
-    </script>
+    <h1 style="display: none;">OwO w-whats this, a t-translator??</h1>
+    <textarea id="input" style="width: 50%"></textarea><textarea id="output" readonly style="width: 50%"></textarea>
+    <table class="options">
+      <thead>
+        <tr>
+          <th colspan="2">Main effects</th>
+        </tr>
+      </thead>
+      <tbody id="mainOptions"></tbody>
+    </table><table class="options">
+      <thead>
+        <tr>
+          <th colspan="2">Replace words</th>
+        </tr>
+        <tr>
+          <th>Word</th>
+          <th>Replaced with</th>
+        </tr>
+      </thead>
+      <tbody id="wordMap"></tbody>
+    </table><table class="options">
+      <thead>
+        <tr>
+          <th>Prefixes</th>
+          <th>Suffixes</th>
+        </tr>
+      </thead>
+      <tbody id="prefixesSuffixes"></tbody>
+    </table>
   </body>
 </html>
