@@ -14,7 +14,7 @@ body {
 }
 
 body * { box-sizing: border-box; }
-body > :first-child, blockquote, ul, ol, pre, table {
+body > :first-child, blockquote, ul, ol, pre, table, textarea {
   margin: 0 0 16px 0;
 }
 p {
@@ -70,11 +70,12 @@ ul, ol {
 li + li {
   margin-top: .25em;
 }
-
-code, pre {
-  background-color: #222222;
+code, pre, textarea {
   border: solid 1px #ffffff1a;
   border-radius: 3px;
+}
+code, pre {
+  background-color: #222222;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 85%;
   padding: 0 .3em;
@@ -83,12 +84,14 @@ code {
   display: inline-block;
   max-width: 100%;
 }
-pre {
+pre, textarea {
   background-color: #141414;
   color: #ccc;
+  padding: 16px;
+}
+pre {
   line-height: 1.45;
   overflow-wrap: normal;
-  padding: 16px;
 }
 pre code {
   background-color: #00000000;
@@ -98,9 +101,14 @@ pre code {
   padding: 0 .2em;
   white-space: pre;
 }
-
 pre, table {
   overflow: auto;
+}
+textarea {
+  height: 200px;
+  resize: none;
+  line-height: inherit;
+  font-family: inherit;
 }
 table {
   border-collapse: collapse;
