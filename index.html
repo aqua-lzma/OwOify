@@ -12,7 +12,12 @@ title: OwO'ify
   </head>
   <body>
     <h1>OwO what's this?</h1>
-    <textarea style="width: 50%"></textarea>
-    <textarea readonly style="width 50%"></textarea>
+    <textarea id="input" style="width: calc(50% - 3px)"></textarea>
+    <textarea id="output" readonly style="width: calc(50% - 3px)"></textarea>
+    <script>
+      document.querySelector('#input').addEventListener('keyup', function () {
+        document.querySelector('#output').value = owoify(this.value)
+      })
+    </script>
   </body>
 </html>
