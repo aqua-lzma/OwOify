@@ -4,7 +4,7 @@ window.addEventListener('load', async () => {
   let output = [
     '(function () {',
     ...text.split('\n').map(line => `  ${line}`),
-    '  startOwoifier(document.body)',
+    '  observer = startOwoifier(document.body)',
     '})()'
   ].join('\n')
   let pre = document.createElement('pre')
