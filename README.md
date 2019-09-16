@@ -15,7 +15,7 @@ Examples of changes:
 
 ## Discord
 
-### Desktop Discord client
+### [Desktop Discord client](https://aqua-lzma.github.io/OwOify/discord)
 
 #### Usage
 
