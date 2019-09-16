@@ -1,4 +1,4 @@
-(async function () {
+window.addEventListener('load', async () => {
   let script = await fetch('owoify.js')
   let text = await script.text()
   let output = [
@@ -10,4 +10,4 @@
   let pre = document.createElement('pre')
   pre.textContent = output
   document.body.appendChild(pre)
-})()
+})
