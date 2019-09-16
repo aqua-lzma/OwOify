@@ -97,6 +97,10 @@ class OwO {
   }
 
   owoify (text) {
+    // Replace words
+    if (this.replaceWords) {
+      text = OwO.replaceAll(text, this.wordMap)
+    }
     // OwO
     if (this.rltow) {
       text = text.replace(/[rl]/gi, match =>
@@ -114,10 +118,6 @@ class OwO {
       text = text.replace(/\b(?=.*[aeiou])(?=[a-vx-z])[a-z]{4,}y\b/gi, match =>
         `${match} ${match.charCodeAt(0) < 97 ? 'W' : 'w'}${match.match(/.[aeiouy].*/i)[0].slice(1)}`
       )
-    }
-    // Replace words
-    if (this.replaceWords) {
-      text = OwO.replaceAll(text, this.wordMap)
     }
     // S-stutter
     if (this.doStutter) {
