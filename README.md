@@ -15,7 +15,7 @@ God fucking damn it stop owo'ifying everything. It's really annoying! | hehe g-g
 ## Versions
 
 - [In browser translator](https://aqua-lzma.github.io/OwOify)
-- [Desktop Discord client](https://aqua-lzma.github.io/OwOify/discord)
+- [Discord desktop client script](https://aqua-lzma.github.io/OwOify/discord)
 - ~~[BetterDiscord plugin]()~~
 - ~~[Chrome extension]()~~
 - ~~[Firefox extension]()~~
