@@ -158,6 +158,7 @@ function getTextNodes (node, set) {
 }
 
 function startOwoifier (root) {
+  let owo = new OwO()
   let observer = new MutationObserver(mutations => {
     let targets = new Set()
     for (let mutation of mutations) {
@@ -166,12 +167,12 @@ function startOwoifier (root) {
       }
     }
     for (let target of targets) {
-      target.nodeValue = owoify(target.nodeValue)
+      target.nodeValue = owo.owoify(target.nodeValue)
     }
   })
 
   for (let node of getTextNodes(root, new Set())) {
-    node.nodeValue = owoify(node.nodeValue)
+    node.nodeValue = owo.owoify(node.nodeValue)
   }
   observer.observe(root, { childList: true, subtree: true })
   return observer
