@@ -1,4 +1,4 @@
-# OwOify
+# [OwOify](https://aqua-lzma.github.io/OwOify/)
 OwO'ify browser extension and Discord script
 
 OwO'ify webpages to make them much more fun to read!
