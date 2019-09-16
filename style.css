@@ -12,7 +12,6 @@ body {
   overflow-wrap: break-word;
   padding: 45px;
 }
-
 body * { box-sizing: border-box; }
 body > :first-child, blockquote, ul, ol, pre, table, textarea {
   margin: 0 0 16px 0;
@@ -27,11 +26,9 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 strong {
   color: #e2e2e2;
 }
-
 h1, h2, h3, h4, h5, h6, strong, table th { font-weight: 600; }
 h1, h2, h3, h4, h5, h6 {
   margin: 24px 0 16px 0;
@@ -50,65 +47,50 @@ h6 {
   color: #949494;
   font-size: .85em;
 }
-
 hr {
   background-color: #343434;
   border: solid 1px #484848;
   margin: 24px 0;
   overflow: hidden;
 }
-
 blockquote {
   border-left: solid 4px #343434;
   color: #b5b5b5;
   padding: 0 16px;
 }
-
 ul, ol {
   padding-left: 2em;
 }
 li + li {
   margin-top: .25em;
 }
-code, pre, textarea {
+code, pre, textarea, input {
   border: solid 1px #ffffff1a;
   border-radius: 3px;
-}
-code, pre {
   background-color: #222222;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 85%;
   padding: 0 .3em;
 }
-code {
+code, input {
   display: inline-block;
   max-width: 100%;
+  margin: 0;
+}
+input {
+  line-height: inherit;
+  color: inherit;
+  margin: inherit;
 }
 pre, textarea {
   background-color: #141414;
   color: #ccc;
   padding: 16px;
-}
-pre {
   line-height: 1.45;
   overflow-wrap: normal;
 }
-pre code {
-  background-color: #00000000;
-  border: none;
-  font-size: 100%;
-  line-height: inherit;
-  padding: 0 .2em;
-  white-space: pre;
-}
-pre, table {
+pre, table, textarea {
   overflow: auto;
-}
-textarea {
-  height: 200px;
-  resize: none;
-  line-height: inherit;
-  font-family: inherit;
 }
 table {
   border-collapse: collapse;
@@ -127,7 +109,6 @@ table th, table td {
 table tr:nth-child(2n) {
   background: #181818;
 }
-
 ::placeholder {
   color: #666;
   opacity: 1;
