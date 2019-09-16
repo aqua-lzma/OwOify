@@ -4,6 +4,7 @@
   let output = [
     '(function () {',
     ...text.split('\n').map(line => `  ${line}`),
+    '  startOwoifier()',
     '})()'
   ].join('\n')
   let pre = document.createElement('pre')
